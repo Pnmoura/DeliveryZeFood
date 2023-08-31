@@ -1,0 +1,16 @@
+{
+    "name": "pnmoura/deliveryzefood",
+    "description": "sistema de delivery de vários restaurantes ou bebidas somennte",
+    "autoload": {
+        "psr-4": {
+            "Pnmoura\\Deliveryzefood\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pedro Nunes",
+            "email": "pedro.nunesmoura@outlook.com"
+        }
+    ],
+    "require": {}
+}
