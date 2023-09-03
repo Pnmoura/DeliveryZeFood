@@ -3,7 +3,8 @@
     "description": "sistema de delivery de vários restaurantes ou bebidas somennte",
     "autoload": {
         "psr-4": {
-            "Pnmoura\\Deliveryzefood\\": "src/"
+            "Pnmoura\\Deliveryzefood\\": "src/",
+            "App\\": "App/"
         }
     },
     "authors": [
