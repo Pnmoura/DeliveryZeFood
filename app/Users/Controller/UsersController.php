@@ -1,40 +1,48 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Users\Controller;
 
-use Doctrine\ORM\EntityManager;
-use http\Client\Curl\User;
-use Psr\Http\Message\RequestInterface as Request;
+use Doctrine\DBAL\DriverManager;
 use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+
 class UsersController
 {
-    private $entityManager;
 
-    /**
-     * @param $entityManager
-     */
-    public function __construct(EntityManager\ $entityManager)
+    public function listUsers(Request $request, Response $response)
     {
-        $this->entityManager = $entityManager;
+        $conn = DriverManager::getConnection([
+            'host' => 'localhost:3306',
+            'user' => 'root',
+            'password' => 'Cd4kzEeZuFBDdyo',
+            'dbname' => 'delivery-ze-food',
+            'driver' => 'pdo_mysql'
+        ]);
+
+        $usuarios = $conn->query('select * from users')->fetchAllAssociative();
+
+        $data = [];
+        foreach ($usuarios as $usuario) {
+            $data = [
+                'id' => $usuario['id'],
+                'fullname' => $usuario['fullname'],
+            ];
+        }
+
+        $response->getBody()->write(json_encode($data));
+        return $response->withHeader('Content-Type', 'application/json');
     }
 
-    public function listUsers(Request $request, Response $response, array $args)
+    public function getEntityManager(): DriverManager
     {
-        $userRepository = $this->entityManager->getRepository(User::class);
-        $user = $userRepository->findAll();
+        return DriverManager::getConnection([
+                'host' => 'localhost:3306',
+                'user' => 'root',
+                'password' => 'Cd4kzEeZuFBDdyo',
+                'dbname' => 'delivery-ze-food',
+                'driver' => 'pdo_mysql'
+        ]);
     }
-
-    $data = [];
-    foreach ($users as $user)
-    {
-    $data[] = [
-        'id' => $user->getId(),
-        'name' => $user->getName(),
-        'email' => $user->getEmail(),// Adicione outros campos aqui conforme necessário
-        ];
-    }
-
-    // Retorne a resposta em formato JSON (ou outro formato desejado)
-    $response->getBody()->write(json_encode($data));
-    return $response->withHeader('Content-Type', 'application/json');
 }

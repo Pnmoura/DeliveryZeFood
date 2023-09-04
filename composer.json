@@ -4,7 +4,7 @@
     "autoload": {
         "psr-4": {
             "Pnmoura\\Deliveryzefood\\": "src/",
-            "App\\": "App/"
+            "App\\": "app/"
         }
     },
     "authors": [
@@ -15,9 +15,21 @@
     ],
     "require": {
         "doctrine/migrations": "^3.5",
-        "vlucas/phpdotenv": "^5.5"
+        "vlucas/phpdotenv": "^5.5",
+        "slim/psr7": "^1.6",
+        "httpsoft/http-message": "^1.1",
+        "httpsoft/http-server-request": "^1.1",
+        "nyholm/psr7": "^1.8",
+        "nyholm/psr7-server": "^1.0",
+        "guzzlehttp/psr7": "^2.6",
+        "laminas/laminas-diactoros": "^2.17",
+        "slim/slim": "^4.12",
+        "doctrine/orm": "^2.16"
     },
-    "scripts": {
+"scripts": {
         "migrate": "php artisan migrate"
+    },
+    "config": {
+        "vendor-dir": "vendor"
     }
 }
