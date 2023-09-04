@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Users\Controller;
 
 use Doctrine\DBAL\DriverManager;
+use Laminas\Diactoros\Response\JsonResponse;
+use Pnmoura\Deliveryzefood\AllRegisters\AllRegisters;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
@@ -13,15 +15,7 @@ class UsersController
 
     public function listUsers(Request $request, Response $response)
     {
-        $conn = DriverManager::getConnection([
-            'host' => 'localhost:3306',
-            'user' => 'root',
-            'password' => 'Cd4kzEeZuFBDdyo',
-            'dbname' => 'delivery-ze-food',
-            'driver' => 'pdo_mysql'
-        ]);
-
-        $usuarios = $conn->query('select * from users')->fetchAllAssociative();
+        $usuarios = [AllRegisters::class, 'listRegisters'];
 
         $data = [];
         foreach ($usuarios as $usuario) {
@@ -33,16 +27,5 @@ class UsersController
 
         $response->getBody()->write(json_encode($data));
         return $response->withHeader('Content-Type', 'application/json');
-    }
-
-    public function getEntityManager(): DriverManager
-    {
-        return DriverManager::getConnection([
-                'host' => 'localhost:3306',
-                'user' => 'root',
-                'password' => 'Cd4kzEeZuFBDdyo',
-                'dbname' => 'delivery-ze-food',
-                'driver' => 'pdo_mysql'
-        ]);
     }
 }
