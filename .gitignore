@@ -1,4 +1,5 @@
 .gitignore
 .env
 migrations-db.php
+src/AllRegisters
 vendor

@@ -6,26 +6,21 @@ namespace App\Users\Controller;
 
 use Doctrine\DBAL\DriverManager;
 use Laminas\Diactoros\Response\JsonResponse;
-use Pnmoura\Deliveryzefood\AllRegisters\AllRegisters;
+use Pnmoura\Deliveryzefood\AllRegisters\ConnectionDatabase;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-class UsersController
+class UsersController extends ConnectionDatabase
 {
-
     public function listUsers(Request $request, Response $response)
     {
-        $usuarios = [AllRegisters::class, 'listRegisters'];
+        $connection = new ConnectionDatabase();
+        $list = $connection->listRegisters();
 
-        $data = [];
-        foreach ($usuarios as $usuario) {
-            $data = [
-                'id' => $usuario['id'],
-                'fullname' => $usuario['fullname'],
-            ];
-        }
+        $response->getBody()->write(
+            json_encode($list)
+        );
 
-        $response->getBody()->write(json_encode($data));
         return $response->withHeader('Content-Type', 'application/json');
     }
 }
