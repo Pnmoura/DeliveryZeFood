@@ -31,11 +31,11 @@ class ConnectionDatabase
     private function createDatabaseConnection()
     {
         $connectionParams = [
-            'host' => 'localhost:3306',
-            'user' => 'root',
-            'password' => 'Cd4kzEeZuFBDdyo',
-            'dbname' => 'delivery-ze-food',
-            'driver' => 'pdo_mysql',
+            'host' => $_ENV['DB_HOST'],
+            'user' => $_ENV['DB_USERNAME'],
+            'password' => $_ENV['DB_PASSWORD'],
+            'dbname' => $_ENV['DB_DATABASE'],
+            'driver' => $_ENV['DB_DRIVER'],
         ];
 
         return DriverManager::getConnection($connectionParams);
