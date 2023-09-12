@@ -23,7 +23,10 @@ class ConnectionDatabase
 
         $query = $queryBuilder->getSQL();
         $result = $conn->executeQuery($query)->fetchAllAssociative();
+
+        return $result;
     }
+
 
     private function createDatabaseConnection()
     {
