@@ -15,18 +15,18 @@ class ConnectionDatabase
     public function listRegisters(): array
     {
         $conn = $this->createDatabaseConnection();
-        $query = "SELECT 
-                        fullname as 'nome', 
-                        cpf, 
-                        birthdate as 'Data de Nasc.', 
-                        telephone as 'Telefone', 
-                        address as 'Endereço'    
-                    FROM 
-                        users";
+
+        $queryBuilder = $conn->createQueryBuilder();
+        $queryBuilder
+            ->select(['*'])
+            ->from('users');
+
+        $query = $queryBuilder->getSQL();
         $result = $conn->executeQuery($query)->fetchAllAssociative();
 
         return $result;
     }
+
 
     private function createDatabaseConnection()
     {
