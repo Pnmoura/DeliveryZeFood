@@ -21,4 +21,5 @@ class UsersController extends ConnectionDatabase
 
         return $response->withHeader('Content-Type', 'application/json');
     }
+
 }
