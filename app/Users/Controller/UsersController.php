@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace App\Users\Controller;
 
-use Doctrine\DBAL\DriverManager;
-use Laminas\Diactoros\Response\JsonResponse;
 use Pnmoura\Deliveryzefood\AllRegisters\ConnectionDatabase;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
