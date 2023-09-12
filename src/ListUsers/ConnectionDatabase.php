@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pnmoura\Deliveryzefood\AllRegisters;
+namespace Pnmoura\Deliveryzefood\ListUsers;
 
 use Doctrine\DBAL\DriverManager;
 use Dotenv\Dotenv;
