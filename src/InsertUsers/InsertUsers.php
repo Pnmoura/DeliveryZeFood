@@ -30,6 +30,7 @@ class InsertUsers
                 'telephone' => '?',
                 'address' => '?'
             ));
+        a
 
         $query = $queryBuilderInsert->getSQL();
         $insert = $conn->executeQuery($query)->fetchAllAssociative();
