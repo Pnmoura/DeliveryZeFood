@@ -7,5 +7,5 @@ use Slim\Factory\AppFactory;
 
 $app = AppFactory::create();
 $app->get('/users', [UsersController::class, 'listUsers'] );
-$app->get('/create', [InsertUsers::class, 'insertingUsers'] );
+$app->post('/create', [InsertUsers::class, 'insertingUsers'] );
 $app->run();
