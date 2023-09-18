@@ -4,22 +4,34 @@ declare(strict_types=1);
 
 namespace App\Users\Controller;
 
-use Pnmoura\Deliveryzefood\ListUsers\ListUsers;
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
+use App\Users\Service\UserService;
+use Config\Conn;
+use Dotenv\Dotenv;
 
-class UsersController extends ListUsers
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../../../', '.env');
+$dotenv->load();
+
+class UsersController extends UserService
 {
-    public function listUsers(Request $request, Response $response)
+    private $conn;
+    public function __construct()
     {
-        $connection = new ListUsers();
-        $list = $connection->listRegisters();
+        $this->conn = new Conn();
+    }
 
-        $response->getBody()->write(
-            json_encode($list)
-        );
+    public function listRegisters(): array
+    {
+        $conn = $this->conn->createDatabaseConnection();
 
-        return $response->withHeader('Content-Type', 'application/json');
+        $queryBuilder = $conn->createQueryBuilder();
+        $queryBuilder
+            ->select(['*'])
+            ->from('users');
+
+        $query = $queryBuilder->getSQL();
+        $result = $conn->executeQuery($query)->fetchAllAssociative();
+
+        return $result;
     }
 
 }

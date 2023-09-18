@@ -1,11 +1,11 @@
 <?php
 
-use App\Users\Controller\UsersController;
-use Pnmoura\Deliveryzefood\InsertUsers\InsertUsers;
+use App\Users\Controller\InsertController;
+use App\Users\Service\UserService;
 use Slim\Factory\AppFactory;
 
 
 $app = AppFactory::create();
-$app->get('/users', [UsersController::class, 'listUsers'] );
-$app->post('/create', [InsertUsers::class, 'insertingUsers'] );
+$app->get('/users', [UserService::class, 'listUsers'] );
+$app->post('/create', [InsertController::class, 'insertingUsers'] );
 $app->run();

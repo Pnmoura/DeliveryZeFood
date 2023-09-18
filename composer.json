@@ -4,7 +4,8 @@
     "autoload": {
         "psr-4": {
             "Pnmoura\\Deliveryzefood\\": "src/",
-            "App\\": "app/"
+            "App\\": "app/",
+            "Config\\": "config/"
         }
     },
     "authors": [

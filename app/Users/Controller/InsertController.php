@@ -1,15 +1,18 @@
 <?php
 
-namespace Pnmoura\Deliveryzefood\InsertUsers;
+declare(strict_types=1);
 
-use Pnmoura\Deliveryzefood\ListUsers\Conn;
-use Psr\Http\Message\ResponseInterface as Response;
+namespace App\Users\Controller;
+
+use Config\Conn;
 use Dotenv\Dotenv;
+use Psr\Http\Message\ResponseInterface as Response;
 use Slim\Psr7\Request;
 
-$dotenv = Dotenv::createImmutable(__DIR__ . '/../../', '.env');
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../../../', '.env');
 $dotenv->load();
-class InsertUsers
+
+class InsertController
 {
     private $conn;
 
