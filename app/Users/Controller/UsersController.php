@@ -5,33 +5,26 @@ declare(strict_types=1);
 namespace App\Users\Controller;
 
 use App\Users\Service\UserService;
-use Config\Conn;
 use Dotenv\Dotenv;
+use Psr\Http\Message\RequestInterface as Request;
+use Psr\Http\Message\ResponseInterface as Response;
 
 $dotenv = Dotenv::createImmutable(__DIR__ . '/../../../', '.env');
 $dotenv->load();
 
 class UsersController extends UserService
 {
-    private $conn;
-    public function __construct()
+    public function listRegisters(Request $request, Response $response): Response
     {
-        $this->conn = new Conn();
-    }
 
-    public function listRegisters(): array
-    {
-        $conn = $this->conn->createDatabaseConnection();
+        $connection = new UserService();
+        $list = $connection->listUsers();
 
-        $queryBuilder = $conn->createQueryBuilder();
-        $queryBuilder
-            ->select(['*'])
-            ->from('users');
+        $response->getBody()->write(
+            json_encode($list)
+        );
 
-        $query = $queryBuilder->getSQL();
-        $result = $conn->executeQuery($query)->fetchAllAssociative();
-
-        return $result;
+        return $response->withHeader('Content-Type', 'application/json');
     }
 
 }

@@ -4,21 +4,27 @@ declare(strict_types=1);
 
 namespace App\Users\Service;
 
-use App\Users\Controller\UsersController;
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
+use Config\Conn;
 
 class UserService
 {
-    public function listUsers(Request $request, Response $response)
+    private $conn;
+    public function __construct()
     {
-        $connection = new UsersController();
-        $list = $connection->listRegisters();
+        $this->conn = new Conn();
+    }
+    public function listUsers(): array
+    {
+        $conn = $this->conn->createDatabaseConnection();
 
-        $response->getBody()->write(
-            json_encode($list)
-        );
+        $queryBuilder = $conn->createQueryBuilder();
+        $queryBuilder
+            ->select(['*'])
+            ->from('users');
 
-        return $response->withHeader('Content-Type', 'application/json');
+        $query = $queryBuilder->getSQL();
+        $result = $conn->executeQuery($query)->fetchAllAssociative();
+
+        return $result;
     }
 }
