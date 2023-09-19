@@ -27,4 +27,12 @@ class UsersController extends UserService
         return $response->withHeader('Content-Type', 'application/json');
     }
 
+    public function newUser()
+    {
+        $userService = new UserService();
+        $inserir = $userService->insertService();
+
+        return $inserir;
+    }
+
 }
