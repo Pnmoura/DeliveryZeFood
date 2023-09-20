@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace App\Users\Controller;
 
+use App\Users\Controller\Input\InputSaveCustomer;
 use App\Users\Service\UserService;
 use Dotenv\Dotenv;
+use Laminas\Diactoros\Response\JsonResponse;
 use Psr\Http\Message\RequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 
@@ -27,12 +29,32 @@ class UsersController extends UserService
         return $response->withHeader('Content-Type', 'application/json');
     }
 
-    public function newUser()
+    public function newUser(Request $request, Response $response)
     {
-        $userService = new UserService();
-        $inserir = $userService->insertService();
+        $body = json_decode($request->getBody()->getContents(), true);
 
-        return $inserir;
+        $name = $body['name'];
+        $cpf = $body['cpf'];
+        $birthdate = $body['birthdate'];
+        $telephone = $body['telephone'];
+        $address = $body['address'];
+
+        $userService = new UserService();
+        $id = $userService->insertService(
+            new InputSaveCustomer(
+                $name,
+                $cpf,
+                $birthdate,
+                $telephone,
+                $address
+            )
+        );
+
+        return new JsonResponse(
+            [$id],
+            200, [],
+            JsonResponse::DEFAULT_JSON_FLAGS
+        );
     }
 
 }

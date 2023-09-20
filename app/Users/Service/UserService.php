@@ -4,17 +4,18 @@ declare(strict_types=1);
 
 namespace App\Users\Service;
 
+use App\Users\Controller\Input\InputSaveCustomer;
 use Config\Conn;
-use Psr\Http\Message\RequestInterface as Request;
-use Psr\Http\Message\ResponseInterface as Response;
 
 class UserService
 {
     private $conn;
+
     public function __construct()
     {
         $this->conn = new Conn();
     }
+
     public function listUsers(): array
     {
         $conn = $this->conn->createDatabaseConnection();
@@ -30,29 +31,18 @@ class UserService
         return $result;
     }
 
-    public function insertService(Request $request, Response $response): string
+    public function insertService(InputSaveCustomer $inputSaveCustomer): int
     {
         $conn = $this->conn->createDatabaseConnection();
-
-        $body = json_decode($request->getBody()->getContents(), true);
-
-        $name = $body['name'];
-        $cpf = $body['cpf'];
-        $birthdate = $body['birthdate'];
-        $telephone = $body['telephone'];
-        $address = $body['address'];
-
         $conn
             ->insert('users', [
-                'fullname' => $name,
-                'cpf' => $cpf,
-                'birthdate' => $birthdate,
-                'telephone' => $telephone,
-                'address' => $address
+                'fullname' => $inputSaveCustomer->getName(),
+                'cpf' => $inputSaveCustomer->getCpf(),
+                'birthdate' => $inputSaveCustomer->getBirthdate(),
+                'telephone' => $inputSaveCustomer->getTelephone(),
+                'address' => $inputSaveCustomer->getAddress()
             ]);
 
-        $conn->lastInsertId();
-
-        return $response->withHeader('Content-Type', 'application/json');
+        return (int)$conn->lastInsertId();
     }
 }
