@@ -14,7 +14,7 @@ final class Version20230901203847 extends AbstractMigration
 {
     public function getDescription(): string
     {
-        return 'Criando database de Usuario';
+        return 'Criando Database de Usuario';
     }
 
     public function up(Schema $schema): void
@@ -32,7 +32,7 @@ final class Version20230901203847 extends AbstractMigration
 
     public function down(Schema $schema): void
     {
-        // this down() database is auto-generated, please modify it to your needs
+        // this down() Database is auto-generated, please modify it to your needs
         $this->addSql('DROP TABLE users');
 
     }

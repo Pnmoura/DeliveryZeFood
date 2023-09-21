@@ -10,7 +10,7 @@ return [
     ],
 
     'migrations_paths' => [
-        'database\migrations' => './database/migrations',
+        'Database\migrations' => './Database/migrations',
     ],
 
     'all_or_nothing' => true,

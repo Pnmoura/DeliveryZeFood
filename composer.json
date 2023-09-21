@@ -3,9 +3,9 @@
     "description": "sistema de delivery de vários restaurantes ou bebidas somennte",
     "autoload": {
         "psr-4": {
-            "Pnmoura\\Deliveryzefood\\": "src/",
-            "App\\": "app/",
-            "Config\\": "config/"
+            "App\\": "App/",
+            "Config\\": "Config/",
+            "Tests\\": "Tests/"
         }
     },
     "authors": [
@@ -32,5 +32,8 @@
     },
     "config": {
         "vendor-dir": "vendor"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
     }
 }
