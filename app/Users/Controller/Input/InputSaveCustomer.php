@@ -87,6 +87,4 @@ class InputSaveCustomer
         }
         return $this->address;
     }
-
-
 }

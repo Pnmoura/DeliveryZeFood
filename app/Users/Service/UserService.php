@@ -5,44 +5,32 @@ declare(strict_types=1);
 namespace App\Users\Service;
 
 use App\Users\Controller\Input\InputSaveCustomer;
-use Config\Conn;
+use App\Users\Repository\UserRepository;
 
 class UserService
 {
-    private $conn;
+    private $userRepository;
 
     public function __construct()
     {
-        $this->conn = new Conn();
+        $this->userRepository = new UserRepository();
     }
 
-    public function listUsers(): array
+    public function showUsers(): array
     {
-        $conn = $this->conn->createDatabaseConnection();
-
-        $queryBuilder = $conn->createQueryBuilder();
-        $queryBuilder
-            ->select(['*'])
-            ->from('users');
-
-        $query = $queryBuilder->getSQL();
-        $result = $conn->executeQuery($query)->fetchAllAssociative();
-
-        return $result;
+        return $this->userRepository->listUsersService();
     }
 
-    public function insertService(InputSaveCustomer $inputSaveCustomer): int
+    public function insertUsersService(InputSaveCustomer $inputSaveCustomer): int
     {
-        $conn = $this->conn->createDatabaseConnection();
-        $conn
-            ->insert('users', [
-                'fullname' => $inputSaveCustomer->getName(),
-                'cpf' => $inputSaveCustomer->getCpf(),
-                'birthdate' => $inputSaveCustomer->getBirthdate(),
-                'telephone' => $inputSaveCustomer->getTelephone(),
-                'address' => $inputSaveCustomer->getAddress()
-            ]);
+        $data = [
+            'fullname' => $inputSaveCustomer->getName(),
+            'cpf' => $inputSaveCustomer->getCpf(),
+            'birthdate' => $inputSaveCustomer->getBirthdate(),
+            'telephone' => $inputSaveCustomer->getTelephone(),
+            'address' => $inputSaveCustomer->getAddress()
+        ];
 
-        return (int)$conn->lastInsertId();
+        return $this->userRepository->insertService($data);
     }
 }

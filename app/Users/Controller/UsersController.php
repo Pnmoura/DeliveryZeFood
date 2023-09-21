@@ -18,9 +18,8 @@ class UsersController extends UserService
 {
     public function listRegisters(Request $request, Response $response): Response
     {
-
         $connection = new UserService();
-        $list = $connection->listUsers();
+        $list = $connection->showUsers();
 
         $response->getBody()->write(
             json_encode($list)
@@ -40,7 +39,7 @@ class UsersController extends UserService
         $address = $body['address'];
 
         $userService = new UserService();
-        $id = $userService->insertService(
+        $id = $userService->insertUsersService(
             new InputSaveCustomer(
                 $name,
                 $cpf,
