@@ -6,13 +6,9 @@ namespace App\Users\Controller;
 
 use App\Users\Controller\Input\InputSaveCustomer;
 use App\Users\Service\UserService;
-use Dotenv\Dotenv;
 use Laminas\Diactoros\Response\JsonResponse;
 use Psr\Http\Message\RequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
-
-$dotenv = Dotenv::createImmutable(__DIR__ . '/../../../', '.env');
-$dotenv->load();
 
 class UsersController extends UserService
 {
