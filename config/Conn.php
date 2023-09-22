@@ -5,6 +5,10 @@ declare(strict_types=1);
 namespace Config;
 
 use Doctrine\DBAL\DriverManager;
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../', '.env');
+$dotenv->load();
 
 class Conn
 {
