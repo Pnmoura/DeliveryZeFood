@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Users\Controller;
 
-use App\Users\Controller\Input\InputSaveCustomer;
+use App\Users\Application\Input\InputSaveCustomer;
 use App\Users\Service\UserService;
 use Laminas\Diactoros\Response\JsonResponse;
 use Psr\Http\Message\RequestInterface as Request;

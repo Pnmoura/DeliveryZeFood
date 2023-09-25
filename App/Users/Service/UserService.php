@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Users\Service;
 
-use App\Users\Controller\Input\InputSaveCustomer;
+use App\Users\Application\Input\InputSaveCustomer;
 use App\Users\Repository\UserRepository;
 
 class UserService
