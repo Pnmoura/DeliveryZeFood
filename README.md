@@ -1,6 +1,6 @@
 # Delivery Ze Food
 
-### Sistema de delivery: Criar um sistema de delivery de vários restaurantes ou bebidas somente (uma especie de zé delivery).
+### Sistema de delivery: Criar um sistema de delivery com possibilidade de cadastros de restaurantes, bares (uma especie de Ifood).
 
 ## Endpoints
 
@@ -10,17 +10,16 @@
 
 ## Ações
 
-- Ser possível gerar pedidos
-- Apresentar os pedidos geral na plataforma
-- Apresentar os pedidos de acordo com o restaurante selecionado
-
+- Ser possível gerar pedidos;
+- Ter acessos privilegiados como administrador;
+- etc...
 
 ## Tecnologias utilizadas no projeto (e futuras implementações):
 
 - PHP 7.4
 - MySQL 8.0
 - Composer
-- NPM (futura implementação)
+- NPM
 - Docker
 
 ## Arquiteturas
