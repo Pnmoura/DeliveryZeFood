@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Users\Controller\Input;
+namespace App\Users\Application\Input;
 
 use Exception;
 
