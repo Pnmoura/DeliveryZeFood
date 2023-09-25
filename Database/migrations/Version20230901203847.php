@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace database\migrations;
+namespace Database\migrations;
 
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\Migrations\AbstractMigration;
@@ -26,6 +26,10 @@ final class Version20230901203847 extends AbstractMigration
             birthdate DATE,
             telephone VARCHAR(20),
             address VARCHAR(100),
+            number VARCHAR(20),
+            complement VARCHAR(100),
+            created_at DATETIME NULL DEFAULT NOW(),
+            updated_at DATETIME NULL DEFAULT NOW(),
             PRIMARY KEY (id)
         ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
     }
