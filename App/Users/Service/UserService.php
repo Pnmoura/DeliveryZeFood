@@ -28,7 +28,9 @@ class UserService
             'cpf' => $inputSaveCustomer->getCpf(),
             'birthdate' => $inputSaveCustomer->getBirthdate(),
             'telephone' => $inputSaveCustomer->getTelephone(),
-            'address' => $inputSaveCustomer->getAddress()
+            'address' => $inputSaveCustomer->getAddress(),
+            'number' => $inputSaveCustomer->getNumber(),
+            'complement' => $inputSaveCustomer->getComplement()
         ];
 
         return $this->userRepository->insertUser($data);

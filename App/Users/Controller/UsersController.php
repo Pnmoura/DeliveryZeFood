@@ -33,6 +33,8 @@ class UsersController extends UserService
         $birthdate = $body['birthdate'];
         $telephone = $body['telephone'];
         $address = $body['address'];
+        $number = $body['number'];
+        $complement = $body['complement'];
 
         $userService = new UserService();
         $id = $userService->insertUsersService(
@@ -41,7 +43,9 @@ class UsersController extends UserService
                 $cpf,
                 $birthdate,
                 $telephone,
-                $address
+                $address,
+                $number,
+                $complement
             )
         );
 
