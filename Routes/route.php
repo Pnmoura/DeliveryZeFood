@@ -1,5 +1,6 @@
 <?php
 
+use App\Establishments\Controller\EstablishmentTypeController;
 use App\Users\Controller\UsersController;
 use Slim\Factory\AppFactory;
 
@@ -18,4 +19,5 @@ $app->addErrorMiddleware(
     });
 $app->get('/users', [UsersController::class, 'show'] );
 $app->post('/create', [UsersController::class, 'newUser'] );
+$app->get('/establishmentTypes', [EstablishmentTypeController::class, 'displayEstablishment']);
 $app->run();
