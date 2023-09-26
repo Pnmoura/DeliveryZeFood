@@ -14,5 +14,4 @@ class EstablishmentRepositoryTest extends TestCase
         $result = $EstablishmentRepository->showEstablishmentType();
         $this->assertNotEquals([], $result);
     }
-
 }
