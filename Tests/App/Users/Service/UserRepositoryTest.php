@@ -13,7 +13,7 @@ class UserRepositoryTest extends TestCase
     {
         $userRepository = new UserRepository();
 
-        $result = $userRepository->listUsersService();
+        $result = $userRepository->showUsersService();
         $this->assertNotEquals([], $result);
     }
 }

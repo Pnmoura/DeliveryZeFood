@@ -12,7 +12,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 
 class UsersController extends UserService
 {
-    public function listRegisters(Request $request, Response $response): Response
+    public function show(Request $request, Response $response): Response
     {
         $connection = new UserService();
         $list = $connection->showUsers();

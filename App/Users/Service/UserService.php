@@ -18,7 +18,7 @@ class UserService
 
     public function showUsers(): array
     {
-        return $this->userRepository->listUsersService();
+        return $this->userRepository->showUsersService();
     }
 
     public function insertUsersService(InputSaveCustomer $inputSaveCustomer): int
@@ -31,6 +31,6 @@ class UserService
             'address' => $inputSaveCustomer->getAddress()
         ];
 
-        return $this->userRepository->insertService($data);
+        return $this->userRepository->insertUser($data);
     }
 }

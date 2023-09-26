@@ -16,6 +16,6 @@ $app->addErrorMiddleware(
         $response->getBody()->write(json_encode(['error' => $errorMessage]));
         return $response->withHeader('Content-Type', 'application/json');
     });
-$app->get('/users', [UsersController::class, 'listRegisters'] );
+$app->get('/users', [UsersController::class, 'show'] );
 $app->post('/create', [UsersController::class, 'newUser'] );
 $app->run();
