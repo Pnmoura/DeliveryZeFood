@@ -6,7 +6,7 @@ namespace App\Establishments\Service;
 
 use App\Establishments\Repository\EstablishmentRepository;
 
-class EstablishmentTypeService
+class EstablishmentCategoryService
 {
     private $estabilishmentRepository;
     
@@ -15,7 +15,7 @@ class EstablishmentTypeService
         $this->estabilishmentRepository = new EstablishmentRepository();
     }
 
-    public function displayEstablishmentTypes(): array
+    public function displayEstablishmentCategories(): array
     {
         return $this->estabilishmentRepository->showEstablishmentType();
     }

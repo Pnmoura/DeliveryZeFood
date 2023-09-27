@@ -20,7 +20,7 @@ $app->addErrorMiddleware(
     });
 $app->get('/users', [UsersController::class, 'show'] );
 $app->post('/create', [UsersController::class, 'newUser'] );
-$app->get('/establishmentTypes', [EstablishmentTypeController::class, 'displayEstablishment']);
+$app->get('/establishmentTypes', [EstablishmentCategoryController::class, 'displayEstablishment']);
 $app->get('/establishments', [NewEstablishmentsController::class, 'allEstablishments']);
 $app->post('/createdestablishments', [NewEstablishmentsController::class, 'inputNewEstablishment']);
 $app->run();

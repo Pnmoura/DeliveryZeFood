@@ -15,7 +15,7 @@ class EstablishmentRepository
         $this->conn = new Conn();
     }
 
-    public function showEstablishmentType(): array
+    public function showEstablishmentCategory(): array
     {
         $conn = $this->conn->createDatabaseConnection();
 
