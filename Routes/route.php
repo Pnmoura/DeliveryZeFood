@@ -1,6 +1,7 @@
 <?php
 
 use App\Establishments\Controller\EstablishmentTypeController;
+use App\Establishments\Controller\NewEstablishmentsController;
 use App\Users\Controller\UsersController;
 use Slim\Factory\AppFactory;
 
@@ -20,4 +21,6 @@ $app->addErrorMiddleware(
 $app->get('/users', [UsersController::class, 'show'] );
 $app->post('/create', [UsersController::class, 'newUser'] );
 $app->get('/establishmentTypes', [EstablishmentTypeController::class, 'displayEstablishment']);
+$app->get('/establishments', [NewEstablishmentsController::class, 'allEstablishments']);
+$app->post('/createdestablishments', [NewEstablishmentsController::class, 'inputNewEstablishment']);
 $app->run();
