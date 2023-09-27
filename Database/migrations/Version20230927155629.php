@@ -38,7 +38,7 @@ final class Version20230927155629 extends AbstractMigration
         )DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
 
         $this->addSql('ALTER TABLE estabilishment 
-                ADD FOREIGN KEY (establishment_category_id) REFERENCES establishment_type(id)');
+                ADD FOREIGN KEY (establishment_category_id) REFERENCES establishment_category(id)');
     }
 
     public function down(Schema $schema): void
