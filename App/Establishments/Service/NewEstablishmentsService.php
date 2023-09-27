@@ -33,7 +33,7 @@ class NewEstablishmentsService
             'city' => $inputSaveEstabilishment->getCity(),
             'state' => $inputSaveEstabilishment->getState(),
             'uf' => $inputSaveEstabilishment->getUf(),
-            'estabilishment_type_id' => $inputSaveEstabilishment->getEstabilishmentTypeId()
+            'estabilishment_type_id' => $inputSaveEstabilishment->getEstablishmentCategoryId()
         ];
 
         return $this->newEstablishmentsRepository->registerNewEstablishments($data);

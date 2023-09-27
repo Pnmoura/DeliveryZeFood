@@ -1,6 +1,6 @@
 <?php
 
-use App\Establishments\Controller\EstablishmentTypeController;
+use App\Establishments\Controller\EstablishmentCategoryController;
 use App\Establishments\Controller\NewEstablishmentsController;
 use App\Users\Controller\UsersController;
 use Slim\Factory\AppFactory;

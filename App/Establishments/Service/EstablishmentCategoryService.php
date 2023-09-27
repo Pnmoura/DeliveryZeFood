@@ -17,6 +17,6 @@ class EstablishmentCategoryService
 
     public function displayEstablishmentCategories(): array
     {
-        return $this->estabilishmentRepository->showEstablishmentType();
+        return $this->estabilishmentRepository->showEstablishmentCategory();
     }
 }

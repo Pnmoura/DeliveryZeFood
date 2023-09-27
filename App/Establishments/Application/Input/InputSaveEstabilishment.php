@@ -98,7 +98,7 @@ class InputSaveEstabilishment
     {
         return $this->uf;
     }
-    public function getEstabilishmentTypeId(): int
+    public function getEstablishmentCategoryId(): int
     {
         return $this->estabilishment_type_id;
     }

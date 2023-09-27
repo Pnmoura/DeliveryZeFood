@@ -20,7 +20,7 @@ final class Version20230926205141 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('CREATE TABLE establishment_type (
+        $this->addSql('CREATE TABLE establishment_category (
             id INT AUTO_INCREMENT NOT NULL,
             name VARCHAR(50) NOT NULL,
             created_at DATETIME NULL DEFAULT NOW(),
@@ -32,7 +32,7 @@ final class Version20230926205141 extends AbstractMigration
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('DROP TABLE establishment_type');
+        $this->addSql('DROP TABLE establishment_category');
 
     }
 }

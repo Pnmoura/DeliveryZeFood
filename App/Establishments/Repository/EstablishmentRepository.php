@@ -22,7 +22,7 @@ class EstablishmentRepository
         $queryBuilder = $conn->createQueryBuilder();
         $queryBuilder
             ->select(['*'])
-            ->from('establishment_type');
+            ->from('establishment_category');
 
         $query = $queryBuilder->getSQL();
         $result = $conn->executeQuery($query)->fetchAllAssociative();

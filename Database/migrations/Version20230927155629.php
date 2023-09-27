@@ -31,14 +31,14 @@ final class Version20230927155629 extends AbstractMigration
             city VARCHAR(20) NOT NULL,
             state VARCHAR(20) NOT NULL,
             uf VARCHAR(2) NOT NULL,
-            estabilishment_type_id int NOT NULL,
+            establishment_category_id int NOT NULL,
             created_at DATETIME NULL DEFAULT NOW(),
             updated_at DATETIME NULL DEFAULT NOW(),
             PRIMARY KEY (id)
         )DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
 
         $this->addSql('ALTER TABLE estabilishment 
-                ADD FOREIGN KEY (estabilishment_type_id) REFERENCES establishment_type(id)');
+                ADD FOREIGN KEY (establishment_category_id) REFERENCES establishment_type(id)');
     }
 
     public function down(Schema $schema): void

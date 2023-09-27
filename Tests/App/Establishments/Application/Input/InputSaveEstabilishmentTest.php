@@ -23,7 +23,7 @@ class InputSaveEstabilishmentTest extends TestCase
             'city' => 'Blumenau',
             'state' => 'Santa Catarina',
             'uf' => 'SC',
-            'estabilishment_type_id' => '1',
+            'establishment_category_id' => '1',
         ]);
 
         $this->assertIsInt($register);
