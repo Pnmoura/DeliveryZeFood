@@ -14,13 +14,23 @@ class Conn
 {
     public function createDatabaseConnection()
     {
-        $connectionParams = [
-            'host' => $_ENV['DB_HOST'],
-            'user' => $_ENV['DB_USERNAME'],
-            'password' => $_ENV['DB_PASSWORD'],
-            'dbname' => $_ENV['DB_DATABASE'],
-            'driver' => $_ENV['DB_DRIVER'],
-        ];
+        if ($_ENV['APP_MODE'] === 'TEST') {
+            $connectionParams = [
+                'host' => $_ENV['DB_HOST'],
+                'user' => $_ENV['DB_USERNAME'],
+                'password' => $_ENV['DB_PASSWORD'],
+                'dbname' => $_ENV['DB_TEST'],
+                'driver' => $_ENV['DB_DRIVER'],
+            ];
+        } else {
+            $connectionParams = [
+                'host' => $_ENV['DB_HOST'],
+                'user' => $_ENV['DB_USERNAME'],
+                'password' => $_ENV['DB_PASSWORD'],
+                'dbname' => $_ENV['DB_DATABASE'],
+                'driver' => $_ENV['DB_DRIVER'],
+            ];
+        }
 
         return DriverManager::getConnection($connectionParams);
     }
