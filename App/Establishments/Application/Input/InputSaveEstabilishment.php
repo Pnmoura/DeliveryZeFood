@@ -24,7 +24,7 @@ class InputSaveEstabilishment
 
     private $uf;
 
-    private $estabilishment_type_id;
+    private $establishment_category_id;
 
     public function __construct(
         string $name,
@@ -36,7 +36,7 @@ class InputSaveEstabilishment
         string $city,
         string $state,
         string $uf,
-        int $estabilishment_type_id
+        int $establishment_category_id
     )
     {
         $this->name = $name;
@@ -48,7 +48,7 @@ class InputSaveEstabilishment
         $this->city = $city;
         $this->state = $state;
         $this->uf = $uf;
-        $this->estabilishment_type_id = $estabilishment_type_id;
+        $this->establishment_category_id = $establishment_category_id;
     }
 
     /**
@@ -100,6 +100,6 @@ class InputSaveEstabilishment
     }
     public function getEstablishmentCategoryId(): int
     {
-        return $this->estabilishment_type_id;
+        return $this->establishment_category_id;
     }
 }

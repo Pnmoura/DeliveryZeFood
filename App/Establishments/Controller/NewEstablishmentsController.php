@@ -37,7 +37,7 @@ class NewEstablishmentsController extends NewEstablishmentsService
         $city = $body['city'];
         $state = $body['state'];
         $uf = $body['uf'];
-        $estabilishment_type_id = $body['estabilishment_type_id'];
+        $establishment_category_id = $body['establishment_category_id'];
 
         $establishmentService = new NewEstablishmentsService();
         $id = $establishmentService->registerNewEstablishment(
@@ -51,7 +51,7 @@ class NewEstablishmentsController extends NewEstablishmentsService
                 $city,
                 $state,
                 $uf,
-                $estabilishment_type_id
+                $establishment_category_id
             )
         );
 
