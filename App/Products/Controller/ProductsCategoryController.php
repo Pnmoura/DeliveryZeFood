@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Products\Controller;
 
-use App\Products\Application\InputSaveCategoryProducts;
+use App\Products\Application\Input\InputSaveCategoryProducts;
 use App\Products\Service\ProductsCategoryService;
 use Laminas\Diactoros\Response\JsonResponse;
 use Psr\Http\Message\RequestInterface as Request;
