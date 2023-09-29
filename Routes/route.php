@@ -3,6 +3,7 @@
 use App\Establishments\Controller\EstablishmentCategoryController;
 use App\Establishments\Controller\NewEstablishmentsController;
 use App\Products\Controller\ProductsCategoryController;
+use App\Products\Controller\ProductsController;
 use App\Users\Controller\UsersController;
 use Slim\Factory\AppFactory;
 
@@ -25,5 +26,7 @@ $app->get('/establishmentCategories', [EstablishmentCategoryController::class, '
 $app->get('/establishments', [NewEstablishmentsController::class, 'allEstablishments']);
 $app->post('/createdestablishments', [NewEstablishmentsController::class, 'inputNewEstablishment']);
 $app->get('/productsCategory', [ProductsCategoryController::class, 'productsCategories']);
-$app->post('/newProducts', [ProductsCategoryController::class, 'inputNewProductsCategories']);
+$app->post('/newCategoryProducts', [ProductsCategoryController::class, 'inputNewProductsCategories']);
+$app->get('/productslist', [ProductsController::class, 'productsList']);
+$app->post('/newProducts', [ProductsController::class, 'inputNewProduct']);
 $app->run();

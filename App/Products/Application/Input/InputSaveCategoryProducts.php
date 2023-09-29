@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Products\Application;
+namespace App\Products\Application\Input;
 
 class InputSaveCategoryProducts
 {

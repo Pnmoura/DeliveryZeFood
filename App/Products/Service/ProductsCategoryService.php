@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Products\Service;
 
-use App\Products\Application\InputSaveCategoryProducts;
+use App\Products\Application\Input\InputSaveCategoryProducts;
 use App\Products\Repository\ProductsCategoryRepository;
 
 class ProductsCategoryService
