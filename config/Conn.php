@@ -16,11 +16,11 @@ class Conn
     {
         if ($_ENV['APP_MODE'] === 'TEST') {
             $connectionParams = [
-                'host' => $_ENV['DB_HOST'],
-                'user' => $_ENV['DB_USERNAME'],
-                'password' => $_ENV['DB_PASSWORD'],
+                'host' => $_ENV['DB_TEST_HOST'],
+                'user' => $_ENV['DB_TEST_USERNAME'],
+                'password' => $_ENV['DB_TEST_PASSWORD'],
                 'dbname' => $_ENV['DB_TEST'],
-                'driver' => $_ENV['DB_DRIVER'],
+                'driver' => $_ENV['DB_TEST_DRIVER'],
             ];
         } else {
             $connectionParams = [
