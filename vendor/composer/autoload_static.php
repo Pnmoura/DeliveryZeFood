@@ -40,6 +40,10 @@ class ComposerStaticInita3fb83fe7d84292acd64b91efcfd8c54
     );
 
     public static $prefixLengthsPsr4 = array (
+        'T' => 
+        array (
+            'Tests\\' => 6,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
@@ -65,7 +69,6 @@ class ComposerStaticInita3fb83fe7d84292acd64b91efcfd8c54
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
             'ProxyManager\\' => 13,
-            'Pnmoura\\Deliveryzefood\\' => 23,
             'PhpParser\\' => 10,
             'PhpOption\\' => 10,
         ),
@@ -121,6 +124,10 @@ class ComposerStaticInita3fb83fe7d84292acd64b91efcfd8c54
     );
 
     public static $prefixDirsPsr4 = array (
+        'Tests\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Tests',
+        ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
@@ -202,10 +209,6 @@ class ComposerStaticInita3fb83fe7d84292acd64b91efcfd8c54
         'ProxyManager\\' => 
         array (
             0 => __DIR__ . '/..' . '/friendsofphp/proxy-manager-lts/src/ProxyManager',
-        ),
-        'Pnmoura\\Deliveryzefood\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
         ),
         'PhpParser\\' => 
         array (
@@ -310,11 +313,11 @@ class ComposerStaticInita3fb83fe7d84292acd64b91efcfd8c54
         ),
         'Config\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/config',
+            0 => __DIR__ . '/../..' . '/Config',
         ),
         'App\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app',
+            0 => __DIR__ . '/../..' . '/App',
         ),
     );
 

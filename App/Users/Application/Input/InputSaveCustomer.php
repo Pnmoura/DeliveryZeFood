@@ -20,7 +20,13 @@ class InputSaveCustomer
     private $address;
 
     private $number;
+
     private $complement;
+
+    private $email;
+
+    private $senha;
+
     public function __construct(
         string $name,
         string $cpf,
@@ -28,7 +34,9 @@ class InputSaveCustomer
         string $telephone,
         string $address,
         string $number,
-        string $complement
+        string $complement,
+        string $email,
+        string $senha
     )
     {
         $this->name = $name;
@@ -38,6 +46,8 @@ class InputSaveCustomer
         $this->address = $address;
         $this->number = $number;
         $this->complement = $complement;
+        $this->email = $email;
+        $this->senha = $senha;
     }
 
     /**
@@ -111,6 +121,7 @@ class InputSaveCustomer
         }
         return $this->address;
     }
+
     public function getNumber(): string
     {
         if (empty($this->number)) {
@@ -121,8 +132,37 @@ class InputSaveCustomer
         }
         return $this->number;
     }
+
     public function getComplement(): string
     {
+        if (empty($this->complement)) {
+            throw new Exception(
+                "O campo complemento não pode ser enviado vazio",
+                422
+            );
+        }
         return $this->complement;
+    }
+
+    public function getEmail(): string
+    {
+        if (empty($this->email)) {
+            throw new Exception(
+                "O campo email não pode ser enviado vazio",
+                422
+            );
+        }
+        return $this->email;
+    }
+
+    public function getSenha(): string
+    {
+        if (empty($this->senha)) {
+            throw new Exception(
+                "O campo senha não pode ser enviado vazio",
+                422
+            );
+        }
+        return $this->senha;
     }
 }

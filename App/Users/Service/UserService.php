@@ -23,6 +23,7 @@ class UserService
 
     public function insertUsersService(InputSaveCustomer $inputSaveCustomer): int
     {
+
         $data = [
             'fullname' => $inputSaveCustomer->getName(),
             'cpf' => $inputSaveCustomer->getCpf(),
@@ -30,7 +31,9 @@ class UserService
             'telephone' => $inputSaveCustomer->getTelephone(),
             'address' => $inputSaveCustomer->getAddress(),
             'number' => $inputSaveCustomer->getNumber(),
-            'complement' => $inputSaveCustomer->getComplement()
+            'complement' => $inputSaveCustomer->getComplement(),
+            'email' => $inputSaveCustomer->getEmail(),
+            'senha' => $inputSaveCustomer->getSenha()
         ];
 
         return $this->userRepository->insertUser($data);

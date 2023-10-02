@@ -28,6 +28,8 @@ final class Version20230901203847 extends AbstractMigration
             address VARCHAR(100),
             number VARCHAR(20),
             complement VARCHAR(100),
+            email VARCHAR(100) NOT NULL,
+            senha VARCHAR(100) NOT NULL,
             created_at DATETIME NULL DEFAULT NOW(),
             updated_at DATETIME NULL DEFAULT NOW(),
             PRIMARY KEY (id)
