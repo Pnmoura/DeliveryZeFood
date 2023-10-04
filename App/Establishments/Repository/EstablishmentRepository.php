@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Establishments\Repository;
 
 use Config\Conn;
+use Kernel\Configuration\Configuration;
 
 class EstablishmentRepository
 {
@@ -12,7 +13,7 @@ class EstablishmentRepository
 
     public function __construct()
     {
-        $this->conn = new Conn();
+        $this->conn = new Configuration();
     }
 
     public function showEstablishmentCategory(): array
