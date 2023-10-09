@@ -16,9 +16,9 @@ class UserService
         $this->userRepository = new UserRepository();
     }
 
-    public function showUsers(): array
+    public function list(): array
     {
-        return $this->userRepository->showUsersService();
+        return $this->userRepository->showUsersRepository();
     }
 
     public function insertUsersService(InputSaveCustomer $inputSaveCustomer): int
@@ -33,6 +33,6 @@ class UserService
             'complement' => $inputSaveCustomer->getComplement()
         ];
 
-        return $this->userRepository->insertUser($data);
+        return $this->userRepository->create($data);
     }
 }

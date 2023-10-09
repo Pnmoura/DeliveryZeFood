@@ -14,7 +14,7 @@ class Conn
 {
     public function createDatabaseConnection()
     {
-        if ($_ENV['APP_MODE'] === 'TEST') {
+        if ($_ENV['APP_MODE'] === 'test') {
             $connectionParams = [
                 'host' => $_ENV['DB_TEST_HOST'],
                 'user' => $_ENV['DB_TEST_USERNAME'],
@@ -22,7 +22,7 @@ class Conn
                 'dbname' => $_ENV['DB_TEST'],
                 'driver' => $_ENV['DB_TEST_DRIVER'],
             ];
-        } else {
+        } elseif ($_ENV['APP_MODE'] === 'PROD') {
             $connectionParams = [
                 'host' => $_ENV['DB_HOST'],
                 'user' => $_ENV['DB_USERNAME'],
@@ -30,6 +30,8 @@ class Conn
                 'dbname' => $_ENV['DB_DATABASE'],
                 'driver' => $_ENV['DB_DRIVER'],
             ];
+        } else{
+            die('Conexao nao encontrada');
         }
 
         return DriverManager::getConnection($connectionParams);
