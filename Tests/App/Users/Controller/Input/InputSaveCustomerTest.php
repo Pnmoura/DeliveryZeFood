@@ -13,7 +13,7 @@ class InputSaveCustomerTest extends TestCase
     {
         $insertService = new UserRepository();
 
-        $result = $insertService->insertUser([
+        $result = $insertService->create([
             'fullname' => 'Usuario',
             'cpf' => '12345678901',
             'birthdate' => '2023-09-25',

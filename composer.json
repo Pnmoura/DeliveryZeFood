@@ -4,8 +4,9 @@
     "autoload": {
         "psr-4": {
             "App\\": "App/",
-            "Config\\": "Config/",
-            "Tests\\": "Tests/"
+            "Config\\": "config/",
+            "Tests\\": "Tests/",
+            "Kernel\\": "Kernel/"
         }
     },
     "authors": [

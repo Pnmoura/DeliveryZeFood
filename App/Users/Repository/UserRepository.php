@@ -15,7 +15,8 @@ class UserRepository
         $this->conn = new Conn();
     }
 
-    public function showUsersService(): array
+
+    public function showUsersRepository(): array
     {
         $conn = $this->conn->createDatabaseConnection();
 
@@ -30,7 +31,7 @@ class UserRepository
         return $result;
     }
 
-    public function insertUser(array $data): int
+    public function create(array $data): int
     {
         $conn = $this->conn->createDatabaseConnection();
         $conn

@@ -15,7 +15,7 @@ class UsersController extends UserService
     public function show(Request $request, Response $response): Response
     {
         $connection = new UserService();
-        $list = $connection->showUsers();
+        $list = $connection->list();
 
         $response->getBody()->write(
             json_encode($list)
@@ -24,7 +24,7 @@ class UsersController extends UserService
         return $response->withHeader('Content-Type', 'application/json');
     }
 
-    public function newUser(Request $request, Response $response)
+    public function create(Request $request, Response $response)
     {
         $body = json_decode($request->getBody()->getContents(), true);
 

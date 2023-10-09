@@ -40,6 +40,10 @@ class ComposerStaticInita3fb83fe7d84292acd64b91efcfd8c54
     );
 
     public static $prefixLengthsPsr4 = array (
+        'T' => 
+        array (
+            'Tests\\' => 6,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
@@ -65,7 +69,6 @@ class ComposerStaticInita3fb83fe7d84292acd64b91efcfd8c54
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
             'ProxyManager\\' => 13,
-            'Pnmoura\\Deliveryzefood\\' => 23,
             'PhpParser\\' => 10,
             'PhpOption\\' => 10,
         ),
@@ -78,6 +81,10 @@ class ComposerStaticInita3fb83fe7d84292acd64b91efcfd8c54
         array (
             'Laminas\\Diactoros\\' => 18,
             'Laminas\\Code\\' => 13,
+        ),
+        'K' => 
+        array (
+            'Kernel\\' => 7,
         ),
         'H' => 
         array (
@@ -121,6 +128,10 @@ class ComposerStaticInita3fb83fe7d84292acd64b91efcfd8c54
     );
 
     public static $prefixDirsPsr4 = array (
+        'Tests\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Tests',
+        ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
@@ -203,10 +214,6 @@ class ComposerStaticInita3fb83fe7d84292acd64b91efcfd8c54
         array (
             0 => __DIR__ . '/..' . '/friendsofphp/proxy-manager-lts/src/ProxyManager',
         ),
-        'Pnmoura\\Deliveryzefood\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
-        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
@@ -230,6 +237,10 @@ class ComposerStaticInita3fb83fe7d84292acd64b91efcfd8c54
         'Laminas\\Code\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-code/src',
+        ),
+        'Kernel\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Kernel',
         ),
         'HttpSoft\\ServerRequest\\' => 
         array (
@@ -314,7 +325,7 @@ class ComposerStaticInita3fb83fe7d84292acd64b91efcfd8c54
         ),
         'App\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app',
+            0 => __DIR__ . '/../..' . '/App',
         ),
     );
 
