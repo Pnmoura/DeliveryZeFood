@@ -26,7 +26,8 @@
         "guzzlehttp/psr7": "^2.6",
         "laminas/laminas-diactoros": "^2.17",
         "slim/slim": "^4.12",
-        "doctrine/orm": "^2.16"
+        "doctrine/orm": "^2.16",
+        "firebase/php-jwt": "^6.9"
     },
 "scripts": {
         "migrate": "php artisan migrate"

@@ -30,7 +30,9 @@ class UserService
             'telephone' => $inputSaveCustomer->getTelephone(),
             'address' => $inputSaveCustomer->getAddress(),
             'number' => $inputSaveCustomer->getNumber(),
-            'complement' => $inputSaveCustomer->getComplement()
+            'complement' => $inputSaveCustomer->getComplement(),
+            'email' => $inputSaveCustomer->getEmail(),
+            'senha' => md5($inputSaveCustomer->getSenha())
         ];
 
         return $this->userRepository->create($data);

@@ -35,6 +35,8 @@ class UsersController extends UserService
         $address = $body['address'];
         $number = $body['number'];
         $complement = $body['complement'];
+        $email = $body['email'];
+        $senha = $body['senha'];
 
         $userService = new UserService();
         $id = $userService->insertUsersService(
@@ -45,7 +47,9 @@ class UsersController extends UserService
                 $telephone,
                 $address,
                 $number,
-                $complement
+                $complement,
+                $email,
+                $senha
             )
         );
 

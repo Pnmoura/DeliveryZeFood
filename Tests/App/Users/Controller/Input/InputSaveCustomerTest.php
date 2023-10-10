@@ -18,7 +18,9 @@ class InputSaveCustomerTest extends TestCase
             'cpf' => '12345678901',
             'birthdate' => '2023-09-25',
             'telephone' => '11940028922',
-            'address' => 'Rua Bonnard, 12',
+            'address' => 'Rua Bonnard',
+            'number' => '200',
+            'complement' => 'D33',
         ]);
 
         $this->assertIsInt($result);

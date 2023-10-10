@@ -24,7 +24,7 @@ abstract class Connection
 
     protected function getGetPdoConfigurationConnection(): PdoConfigurationConnection
     {
-        if (strtolower($this->getConfiguration()->get('APP_MODE')) === 'prod') {
+        if (strtolower($this->getConfiguration()->get('APP_MODE')) === 'test') {
             return (
                 new DeliveryZeFoodProdConnectionGroup()
             )->getPdoConfigurationConnection($this->getConfiguration());

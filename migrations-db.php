@@ -3,10 +3,9 @@
 
 require 'vendor/autoload.php';
 
-$connectionTest = new \Config\Group\DeliveryZeFoodTestConnectionGroup();
+$connectionTest = new \Config\Group\DeliveryZeFoodProdConnectionGroup();
 
 $connection = $connectionTest->getConnection();
-
 $config = new \Doctrine\Migrations\Configuration\Migration\PhpFile('migrations.php');
 
 $dependencyFactory = \Doctrine\Migrations\DependencyFactory::fromConnection(

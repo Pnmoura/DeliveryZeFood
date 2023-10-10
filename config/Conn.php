@@ -22,7 +22,7 @@ class Conn
                 'dbname' => $_ENV['DB_TEST'],
                 'driver' => $_ENV['DB_TEST_DRIVER'],
             ];
-        } elseif ($_ENV['APP_MODE'] === 'PROD') {
+        } elseif ($_ENV['APP_MODE'] === 'prod') {
             $connectionParams = [
                 'host' => $_ENV['DB_HOST'],
                 'user' => $_ENV['DB_USERNAME'],

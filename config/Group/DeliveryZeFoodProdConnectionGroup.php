@@ -13,11 +13,11 @@ class DeliveryZeFoodProdConnectionGroup extends Connection implements Connection
 {
     public function getPdoConfigurationConnection(Configuration $configuration): PdoConfigurationConnection
     {
-        $host = $configuration->get('DB_TEST_HOST', 'mysql');
+        $host = $configuration->get('DB_HOST', 'mysql');
         $port = $configuration->get('DB_PORT');
-        $user = $configuration->get('DB_TEST_USERNAME');
-        $password = $configuration->get('DB_TEST_PASSWORD');
-        $database = $configuration->get('DB_TEST');
+        $user = $configuration->get('DB_USERNAME');
+        $password = $configuration->get('DB_PASSWORD');
+        $database = $configuration->get('DB_DATABASE');
 
         return new PdoConfigurationConnection(
             $host,
