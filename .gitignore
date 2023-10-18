@@ -1,4 +1,3 @@
 .gitignore
 .env
 migrations-db.php
-vendor
