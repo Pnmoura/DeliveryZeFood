@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Authentication\Controller\AutheticationUserController;
 use App\Establishments\Controller\EstablishmentCategoryController;
 use App\Establishments\Controller\NewEstablishmentsController;
 use App\Products\Controller\ProductsCategoryController;
@@ -29,6 +30,7 @@ class AppRoutes
         // Rotas
         $app->get('/users', [UsersController::class, 'show']);
         $app->post('/create', [UsersController::class, 'create']);
+        $app->get('/login', [AutheticationUserController::class, 'loginUser']);
         $app->get('/establishmentCategories', [EstablishmentCategoryController::class, 'displayEstablishment']);
         $app->get('/establishments', [NewEstablishmentsController::class, 'allEstablishments']);
         $app->post('/createdestablishments', [NewEstablishmentsController::class, 'inputNewEstablishment']);
